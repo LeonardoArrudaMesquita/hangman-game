@@ -1,0 +1,35 @@
+<svg height="400" width="350">
+    <!-- Gallow -->
+    <line x1="60" x2="250" y1="3" y2="3" stroke="black" stroke-width="7" stroke-linecap="butt" />
+    <line x1="246" x2="246" y1="3" y2="40" stroke="black" stroke-width="7" stroke-linecap="butt" />
+    <line x1="60" x2="60" y2="100%" stroke="black" stroke-width="7" stroke-linecap="butt" />
+    <line x1="0" x2="60" y1="100%" y2="85%" stroke="black" stroke-width="7" stroke-linecap="butt" />
+    <line x1="60" x2="120" y1="85%" y2="100%" stroke="black" stroke-width="7" stroke-linecap="butt" />
+    <line x1="60" x2="100" y1="35" y2="3" stroke="black" stroke-width="7" stroke-linecap="butt" />
+
+    @for (part of bodyParts; track $index) {
+        @if (part.type === 'circle' && remainingAttempts <= part.threshold) {
+            <circle
+                [attr.cx]="part.cx"
+                [attr.cy]="part.cy"
+                [attr.r]="part.r"
+                [attr.stroke]="part.stroke"
+                [attr.stroke-width]="part.strokeWidth"
+                [attr.fill]="part.fill"></circle>
+        }
+
+        @if (part.type === 'path' && remainingAttempts <= part.threshold) {
+            <path [attr.d]="part.d" [attr.stroke-width]="part.strokeWidth" [attr.stroke]="part.stroke" [attr.fill]="part.fill"></path>
+        }
+
+        @if (part.type === 'line' && remainingAttempts <= part.threshold) {
+            <line
+                  [attr.x1]="part.x1"
+                  [attr.y1]="part.y1"
+                  [attr.x2]="part.x2"
+                  [attr.y2]="part.y2"
+                  [attr.stroke]="part.stroke"
+                  [attr.stroke-width]="part.strokeWidth"></line>
+            }
+        }
+</svg>
