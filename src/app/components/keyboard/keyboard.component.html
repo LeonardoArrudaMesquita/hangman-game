@@ -1,0 +1,5 @@
+<div class="keyboard">
+    @for (letter of letters; track $index) {
+        <button class="letter" [ngClass]="getCorrectnessStyle(letter)" (click)="onGuessLetter(letter)">{{letter}}</button>
+    }
+</div>

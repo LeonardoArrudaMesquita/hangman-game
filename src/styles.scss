@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --color-black: #000;
+    --color-white: #fff;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {       
+    background-image: url('assets/images/paper.jpg');
+    background-size: cover;
+    font-family: "New Amsterdam", sans-serif;
+}

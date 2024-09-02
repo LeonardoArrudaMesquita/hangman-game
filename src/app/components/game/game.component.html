@@ -1,0 +1,31 @@
+<div class="game">
+    <h1>Hangman Game</h1>
+    
+    <div class="content">
+        <div>
+            <app-gallow [remainingAttempts]="remainingAttempts"></app-gallow>
+            <p>Remaining attempts: {{ remainingAttempts }}</p>
+            <div class="reset" (click)="resetGame()">
+                <p class="reset">Reset</p>
+                <img src="assets/images/refresh.svg" alt="refresh" class="refresh-icon">
+            </div>
+        </div>
+        
+        @if (gameOver) {
+            <p>Game Over! You loose!</p>            
+        }
+
+        @if (hasWinner) {
+            <p>Congrats! You won!</p>
+        }
+
+        <div class="core">
+            @if (hasGameStarted) {
+                <app-hidden-word [word]="hiddenWord"></app-hidden-word>
+                <app-keyboard (guessLetter)="guessLetter($event)" [getCorrectnessStyle]="getKeyboardStyle.bind(this)"></app-keyboard>
+            } @else {
+                <app-secret-word [control]="secretWordControl" (play)="handlePlay()"></app-secret-word>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+.keyboard {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+
+    .letter {
+        font-size: 2rem;
+        width: 5.5rem;
+        height: 5rem;
+        border-radius: 0.4rem;
+        border-style: none;
+        cursor: pointer;
+        background-color: #FCE8A0;
+        color: darken(#FCE8A0, 50%);
+        font-weight: 700;
+        border: 0.1rem solid darken(#FCE8A0, 50%);
+        text-transform: uppercase;
+    }
+
+    .correct {
+        background-color: #66AE8A;
+        color: darken(#66AE8A, 30%);
+        border: 0.1rem solid darken(#66AE8A, 30%);
+        cursor: not-allowed;
+    }
+
+    .incorrect {
+        background-color: #E57880;
+        color: darken(#E57880, 50%);
+        border: 0.1rem solid darken(#E57880, 50%);
+        cursor: not-allowed;
+    }        
+}
